@@ -37,7 +37,7 @@ function show(move) {
   answersEach((x) => {
     x.innerText = move.answers[x.dataset.id]; // eslint-disable-line no-param-reassign
   });
-  $('question').innerHTML = markdown(move.question);
+  $('question').innerHTML = markdown(move.question.replace(/_🤷_/g, '❓'));
   const msg = move.answer.split('\n')[0];
   const answerParent = $('answerParent');
   const answer = $('answer');
